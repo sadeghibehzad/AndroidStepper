@@ -1,19 +1,5 @@
 pluginManagement {
     repositories {
-//        maven {
-//            url "https://artifactory.css.ir:8084/artifactory/libs-release/"
-//            credentials {
-//                username "${artifactory_user}"
-//                password "${artifactory_password}"
-//            }
-//        }
-//        maven {
-//            url "https://artifactory.css.ir:8084/artifactory/google/"
-//            credentials {
-//                username "${artifactory_user}"
-//                password "${artifactory_password}"
-//            }
-//        }
         google()
         mavenCentral()
         maven { url "https://jitpack.io" }
@@ -22,20 +8,6 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-//        maven {
-//            url "https://artifactory.css.ir:8084/artifactory/libs-release/"
-//            credentials {
-//                username "${artifactory_user}"
-//                password "${artifactory_password}"
-//            }
-//        }
-//        maven {
-//            url "https://artifactory.css.ir:8084/artifactory/google/"
-//            credentials {
-//                username "${artifactory_user}"
-//                password "${artifactory_password}"
-//            }
-//        }
         google()
         mavenCentral()
         maven { url "https://jitpack.io" }
@@ -43,4 +15,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Breadcrmub"
 include ':app'
-include ':hamoonStepper'
+include ':AndroidStepper'

@@ -15,5 +15,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         StepperView view = findViewById(R.id.breadcrumb);
+
+        view.setOnStepClickListener(new StepperView.OnStepClick() {
+            @Override
+            public void onClick(TextView textView, int currentPosition) {
+
+            }
+
+            @Override
+            public void onClick(TextView textView, int currentPosition, int lastPosition) {
+
+            }
+        });
     }
 }
