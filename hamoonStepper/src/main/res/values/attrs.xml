@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="HamoonBreadCrumb">
+        <attr name="android:fontFamily"/>
+        <attr name="stepCount" format="integer"  />
+        <attr name="activeStep" format="integer"  />
+        <attr name="activeStepBackgroundColor" format="color"  />
+        <attr name="activeStepTextColor" format="color"  />
+        <attr name="activeStepFontSize" format="dimension"  />
+        <attr name="activeStepPaddingRight" format="dimension"  />
+        <attr name="activeStepPaddingLeft" format="dimension"  />
+        <attr name="activeStepPaddingTop" format="dimension"  />
+        <attr name="activeStepPaddingBottom" format="dimension"  />
+        <attr name="spacerHeight" format="dimension"  />
+        <attr name="spacerBackgroundColor" format="color"  />
+        <attr name="stepPaddingRight" format="dimension"  />
+        <attr name="stepPaddingLeft" format="dimension"  />
+        <attr name="stepPaddingTop" format="dimension"  />
+        <attr name="stepPaddingBottom" format="dimension"  />
+        <attr name="stepBackgroundColor" format="color"  />
+    </declare-styleable>
+
+</resources>

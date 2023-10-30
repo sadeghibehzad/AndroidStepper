@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Hello World!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ir.isc.behzad.hamoonstepper.StepperView
+        android:id="@+id/breadcrumb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        app:stepCount="5"
+        app:activeStep="2"
+        app:activeStepBackgroundColor="@color/stepper_primary_dark"
+        app:spacerBackgroundColor="@color/stepper_primary"
+        app:activeStepTextColor="@color/stepper_white"
+        app:activeStepFontSize="6sp"
+        app:activeStepPaddingRight="14dp"
+        app:activeStepPaddingLeft="14dp"
+        app:activeStepPaddingTop="8dp"
+        app:activeStepPaddingBottom="8dp"
+        app:stepPaddingRight="8dp"
+        app:stepPaddingLeft="8dp"
+        app:stepPaddingTop="0dp"
+        app:stepPaddingBottom="0dp"
+        app:spacerHeight="4dp"
+        android:fontFamily="@font/vazir_farsi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
