@@ -1,6 +1,7 @@
 package com.stepper.host;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,7 +20,12 @@ public class MainActivity extends AppCompatActivity {
         view.setOnStepClickListener(new StepperView.OnStepClick() {
             @Override
             public void onClick(TextView textView, int currentPosition) {
-                StepperView.OnStepClick.super.onClick(textView, currentPosition);
+
+            }
+
+            @Override
+            public void onClick(TextView textView, int currentPosition, int lastPosition) {
+
             }
         });
     }

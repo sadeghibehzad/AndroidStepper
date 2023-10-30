@@ -93,8 +93,8 @@ public class StepperView extends LinearLayoutCompat {
 
     public void setActiveStep(int i) {
         if (i > 0 && i <= stepLists.size()) {
-            this.currentActiveStep = i - 1;
-            TextView textView = stepLists.get(this.currentActiveStep);
+            currentActiveStep = i - 1;
+            TextView textView = stepLists.get(currentActiveStep);
             textView.setText(String.valueOf(i));
             textView.setBackground(setStepBackgroundColor(activeStepBackgroundColor));
             textView.setTextColor(ContextCompat.getColor(getContext(), activeStepTextColor));
@@ -157,13 +157,10 @@ public class StepperView extends LinearLayoutCompat {
         textView.setTextAlignment(TEXT_ALIGNMENT_CENTER);
         textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, activeStepFontSize);
         stepLists.add(textView);
-        textView.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (onStepClick != null) {
-                    onStepClick.onClick(textView, stepLists.indexOf(textView) + 1);
-                    onStepClick.onClick(textView, stepLists.indexOf(textView) + 1, currentActiveStep);
-                }
+        textView.setOnClickListener(v -> {
+            if (onStepClick != null) {
+                onStepClick.onClick(textView, stepLists.indexOf(textView) + 1);
+                onStepClick.onClick(textView, stepLists.indexOf(textView) + 1, currentActiveStep + 1);
             }
         });
         addView(textView);
