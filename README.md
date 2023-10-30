@@ -9,7 +9,7 @@ For any suggestion please be in touch with me: 😄
 
 ---
 
-## [Jump to section](https://github.com/sadeghibehzad[](https://)/AndroidStepper#jump_to_section)
+## [Jump to section](https://github.com/sadeghibehzad/AndroidStepper#jump_to_section)
 
 * [Stepper Types](https://github.com/sadeghibehzad/AndroidStepper#stepper_types)
 * [Features](https://github.com/sadeghibehzad/AndroidStepper#features)
@@ -70,21 +70,22 @@ As you can see all configurable ttributeshas been shown and each one of them are
 
 ## [Attributes](https://github.com/sadeghibehzad/AndroidStepper#attributes)
 
-| **Name** | **Type** | **Value** | **Desciption** |
-| ---- | ---- | ---- | ---- |
-| app:stepCount | Integer  | 1-2147483647 | This value is for step count showing on screen |
-| app:activeStep | Integer  | 1-2147483647 | This Value is for showing current active step |
-| app:activeStepBackgroundColor | Color(Int) | @Color | This value is for specifying background color of active step |
-| app:spacerBackgroundColor | Color(Int) | @Color | This value is for specifying background color spacer between each step |
-| app:activeStepTextColor | Color(Int) | @Color | This value is for specifying text color of active step |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+
+| **Name**                      | **Type**   | **Value**    | **Desciption**                                                         |
+| ----------------------------- | ---------- | ------------ | ---------------------------------------------------------------------- |
+| app:stepCount                 | Integer    | 1-2147483647 | This value is for step count showing on screen                         |
+| app:activeStep                | Integer    | 1-2147483647 | This Value is for showing current active step                          |
+| app:activeStepBackgroundColor | Color(Int) | @Color       | This value is for specifying background color of active step           |
+| app:spacerBackgroundColor     | Color(Int) | @Color       | This value is for specifying background color spacer between each step |
+| app:activeStepTextColor       | Color(Int) | @Color       | This value is for specifying text color of active step                 |
+|                               |            |              |                                                                        |
+|                               |            |              |                                                                        |
+|                               |            |              |                                                                        |
+|                               |            |              |                                                                        |
+|                               |            |              |                                                                        |
+|                               |            |              |                                                                        |
+|                               |            |              |                                                                        |
+|                               |            |              |                                                                        |
 
 ## [Step Click Action](https://github.com/sadeghibehzad/AndroidStepper#step_click_action)
 
@@ -113,4 +114,3 @@ Second implementation will gives you current clicked `TextView` and both `curren
 
 * Adding Icons for steps
 * Adding Animations
-
