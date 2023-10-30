@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.graphics.ColorFilter;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
@@ -195,7 +197,7 @@ public class StepperView extends LinearLayoutCompat {
     }
 
     public interface OnStepClick{
-        void onClick(TextView textView, int currentPosition);
-        void onClick(TextView textView, int currentPosition, int lastPosition);
+        default void onClick(TextView textView, int currentPosition){}
+        default void onClick(TextView textView, int currentPosition, int lastPosition){}
     }
 }

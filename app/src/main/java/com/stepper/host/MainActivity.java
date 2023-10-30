@@ -19,12 +19,7 @@ public class MainActivity extends AppCompatActivity {
         view.setOnStepClickListener(new StepperView.OnStepClick() {
             @Override
             public void onClick(TextView textView, int currentPosition) {
-
-            }
-
-            @Override
-            public void onClick(TextView textView, int currentPosition, int lastPosition) {
-
+                StepperView.OnStepClick.super.onClick(textView, currentPosition);
             }
         });
     }
