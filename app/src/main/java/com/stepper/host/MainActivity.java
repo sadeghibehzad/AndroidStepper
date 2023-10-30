@@ -1,11 +1,11 @@
-package com.example.breadcrmub;
+package com.stepper.host;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import ir.isc.behzad.hamoonstepper.StepperView;
+import com.androidstepper.StepperView;
 
 public class MainActivity extends AppCompatActivity {
 

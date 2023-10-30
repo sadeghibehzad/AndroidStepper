@@ -13,6 +13,6 @@ dependencyResolutionManagement {
         maven { url "https://jitpack.io" }
     }
 }
-rootProject.name = "Breadcrmub"
+rootProject.name = "AndroidStepperHostApp"
 include ':app'
 include ':AndroidStepper'

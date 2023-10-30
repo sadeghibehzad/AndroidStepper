@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ir.isc.behzad.hamoonstepper.StepperView
+    <com.androidstepper.StepperView
         android:id="@+id/breadcrumb"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

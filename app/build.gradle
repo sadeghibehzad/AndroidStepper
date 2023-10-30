@@ -6,7 +6,7 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.breadcrmub"
+        applicationId "com.example.com.adnroidstepper.host"
         minSdk 25
         targetSdk 34
         versionCode 1
