@@ -9,15 +9,15 @@ For any suggestion please be in touch with me: 😄
 
 ---
 
-## [Jump to section](https://github.com/sadeghibehzad/AndroidStepper#jump_to_section)
+## [Jump to section](https://github.com/sadeghibehzad[](https://)/AndroidStepper#jump_to_section)
 
 * [Stepper Types](https://github.com/sadeghibehzad/AndroidStepper#stepper_types)
 * [Features](https://github.com/sadeghibehzad/AndroidStepper#features)
 * [Installation](https://github.com/sadeghibehzad/AndroidStepper#installation)
 * [Usage](https://github.com/sadeghibehzad/AndroidStepper#usage)
-* [Attributes](https://github.com/acefalobi/android-stepper#attributes)
-* [Step Click Action](https://github.com/acefalobi/android-stepper#attributes)
-* [TODO](https://github.com/acefalobi/android-stepper#step_click_action#todo)
+* [Attributes](https://github.com/sadeghibehzad/AndroidStepper#attributes)
+* [Step Click Action](https://github.com/sadeghibehzad/AndroidStepper#attributes)
+* [TODO](https://github.com/sadeghibehzad/AndroidStepper#step_click_action#todo)
 
 ## [Stepper Types](https://github.com/sadeghibehzad/AndroidStepper#stepper_types)
 
@@ -37,7 +37,7 @@ For any suggestion please be in touch with me: 😄
 
 Just add `AndroidStepper` Folder to yout project as a module.
 
-## [Usage](https://github.com/acefalobi/android-stepper#usage)
+## [Usage](https://github.com/sadeghibehzad/AndroidStepper#usage)
 
 In your xml layout add below view:
 
@@ -68,7 +68,7 @@ In your xml layout add below view:
 
 As you can see all configurable ttributeshas been shown and each one of them are described in below section.
 
-## [Attributes](https://github.com/acefalobi/android-stepper#attributes)
+## [Attributes](https://github.com/sadeghibehzad/AndroidStepper#attributes)
 
 | **Name** | **Type** | **Value** | **Desciption** |
 | ---- | ---- | ---- | ---- |
@@ -86,7 +86,7 @@ As you can see all configurable ttributeshas been shown and each one of them are
 |  |  |  |  |
 |  |  |  |  |
 
-## [Step Click Action](https://github.com/acefalobi/android-stepper#step_click_action)
+## [Step Click Action](https://github.com/sadeghibehzad/AndroidStepper#step_click_action)
 
 User can have an action for on each step click which can be useful in some cases:
 
@@ -109,7 +109,7 @@ StepperView view = findViewById(R.id.breadcrumb);
 First implementation of above click listener gives you current clicked `TextView` and `currentPosition` of step.
 Second implementation will gives you current clicked `TextView` and both `currentPosition` and `lastPosition`.
 
-## [TODO](https://github.com/acefalobi/android-stepper#step_click_action#todo)
+## [TODO](https://github.com/sadeghibehzad/AndroidStepper#todo)
 
 * Adding Icons for steps
 * Adding Animations
