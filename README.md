@@ -22,8 +22,8 @@ For any suggestion please be in touch with me: 😄
 ## [Stepper Types](https://github.com/sadeghibehzad/AndroidStepper#stepper_types)
 
 * Bullet with numbers
-* *Tick(planing)*
-* *Custom Icon (planing)*
+* *Tick(planning)*
+* *Custom Icon (planning)*
 
 ## [Features](https://github.com/sadeghibehzad/AndroidStepper#features)
 
@@ -42,7 +42,7 @@ Just add `AndroidStepper` Folder to yout project as a module.
 In your xml layout add below view:
 
 ```
-<com.androidstepper.StepperView
+      <com.androidstepper.StepperView
         android:id="@+id/stepper"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -71,28 +71,31 @@ As you can see all configurable ttributeshas been shown and each one of them are
 ## [Attributes](https://github.com/sadeghibehzad/AndroidStepper#attributes)
 
 
-| **Name**                      | **Type**   | **Value**    | **Desciption**                                                         |
-| ----------------------------- | ---------- | ------------ | ---------------------------------------------------------------------- |
-| app:stepCount                 | Integer    | 1-2147483647 | This value is for step count showing on screen                         |
-| app:activeStep                | Integer    | 1-2147483647 | This Value is for showing current active step                          |
-| app:activeStepBackgroundColor | Color(Int) | @Color       | This value is for specifying background color of active step           |
-| app:spacerBackgroundColor     | Color(Int) | @Color       | This value is for specifying background color spacer between each step |
-| app:activeStepTextColor       | Color(Int) | @Color       | This value is for specifying text color of active step                 |
-|                               |            |              |                                                                        |
-|                               |            |              |                                                                        |
-|                               |            |              |                                                                        |
-|                               |            |              |                                                                        |
-|                               |            |              |                                                                        |
-|                               |            |              |                                                                        |
-|                               |            |              |                                                                        |
-|                               |            |              |                                                                        |
+| **Name**                      | **Type**   | **Value** | **Description**                                                                   |
+|-------------------------------|------------|-----------|-----------------------------------------------------------------------------------|
+| app:stepCount                 | Integer    | 1-2147483647 | This value is for step count showing on screen                                    |
+| app:activeStep                | Integer    | 1-2147483647 | This Value is for showing current active step                                     |
+| app:activeStepBackgroundColor | Color(Int) | @Color    | This value is for specifying background color of active step                      |
+| app:spacerBackgroundColor     | Color(Int) | @Color    | This value is for specifying background color spacer between each step            |
+| app:activeStepTextColor       | Color(Int) | @Color    | This value is for specifying text color of active step                            |
+| app:activeStepFontSize        | SP         | ex:6sp    | For active step font size you can set this value                                  |
+| app:activeStepPaddingRight    | DP         | ex: 16dp  | For giving desired shape to active steps and padding content form right side      |
+| app:activeStepPaddingLeft     | DP         | ex: 16dp  | For giving desired shape to active steps and padding content form left side       |
+| app:activeStepPaddingTop      | DP         | ex: 16dp  | For giving desired shape to active steps and padding content form top side        |
+| app:activeStepPaddingBottom   | DP         | ex: 16dp  | For giving desired shape to active steps and padding content form bottom side     |
+| app:stepPaddingRight          | DP         | ex: 16dp  | For giving desired shape to NOT active steps and padding content form right side  |
+| app:stepPaddingLeft           | DP         | ex: 16dp  | For giving desired shape to NOT active steps and padding content form left side   |
+| app:stepPaddingTop            | DP         | ex: 16dp  | For giving desired shape to NOT active steps and padding content form top side    |
+| app:stepPaddingBottom         | DP         | ex: 16dp  | For giving desired shape to NOT active steps and padding content form bottom side |
+| app:spacerHeight              | DP         | ex: 16dp  | This value defines spacer line height between steps                               |
+| android:fontFamily            | Font       | @font     | This value can be set for font type of active step text                           |
 
 ## [Step Click Action](https://github.com/sadeghibehzad/AndroidStepper#step_click_action)
 
 User can have an action for on each step click which can be useful in some cases:
 
 ```
-StepperView view = findViewById(R.id.breadcrumb);
+       StepperView view = findViewById(R.id.breadcrumb);
 
         view.setOnStepClickListener(new StepperView.OnStepClick() {
             @Override
