@@ -90,6 +90,8 @@ As you can see all configurable ttributeshas been shown and each one of them are
 | app:spacerHeight              | DP         | ex: 16dp  | This value defines spacer line height between steps                               |
 | android:fontFamily            | Font       | @font     | This value can be set for font type of active step text                           |
 
+**Note: In padding attributes you can also set negative values. `ex: -4dp`**
+
 ## [Step Click Action](https://github.com/sadeghibehzad/AndroidStepper#step_click_action)
 
 User can have an action for on each step click which can be useful in some cases:
