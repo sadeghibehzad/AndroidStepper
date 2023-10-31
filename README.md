@@ -75,8 +75,9 @@ As you can see all configurable ttributeshas been shown and each one of them are
 |-------------------------------|------------|-----------|-----------------------------------------------------------------------------------|
 | app:stepCount                 | Integer    | 1-2147483647 | This value is for step count showing on screen                                    |
 | app:activeStep                | Integer    | 1-2147483647 | This Value is for showing current active step                                     |
-| app:activeStepBackgroundColor | Color(Int) | @Color    | This value is for specifying background color of active step                      |
-| app:spacerBackgroundColor     | Color(Int) | @Color    | This value is for specifying background color spacer between each step            |
+| app:activeStepBackgroundColor | Color(Int) | @Color    | This value is for specifying background color of active steps                     |
+| app:spacerBackgroundColor     | Color(Int) | @Color    | This value is for specifying background color of spacer between each step         |
+| app:stepBackgroundColor       | Color(Int) | @Color    | This value is for specifying background color of not active steps                 |
 | app:activeStepTextColor       | Color(Int) | @Color    | This value is for specifying text color of active step                            |
 | app:activeStepFontSize        | SP         | ex:6sp    | For active step font size you can set this value                                  |
 | app:activeStepPaddingRight    | DP         | ex: 16dp  | For giving desired shape to active steps and padding content form right side      |
