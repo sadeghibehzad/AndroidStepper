@@ -8,7 +8,14 @@ For any suggestion please be in touch with me: 😄
 > [LinkedIn](https://www.linkedin.com/in/behzad-sadeghi-20a8b668/)
 
 ---
+## ScreenShot
 
+| **Smaple**                                   |
+|----------------------------------------------|
+| ![project structure](/screenshots/first.png) |
+|----------------------------------------------|
+
+ ---
 ## [Jump to section](https://github.com/sadeghibehzad/AndroidStepper#jump_to_section)
 
 * [Stepper Types](https://github.com/sadeghibehzad/AndroidStepper#stepper_types)
