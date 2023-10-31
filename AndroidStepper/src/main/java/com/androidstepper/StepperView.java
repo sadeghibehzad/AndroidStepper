@@ -2,7 +2,9 @@ package com.androidstepper;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.drawable.Drawable;
@@ -12,6 +14,7 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -41,23 +44,23 @@ public class StepperView extends LinearLayoutCompat {
             ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT);
     private int currentActiveStep;
     private final List<TextView> stepLists = new ArrayList<TextView>();
-    private final int stepCount;
-    private final int activeStep;
+    private int stepCount;
+    private int activeStep;
     private final int fontFamily;
-    private final int activeStepBackgroundColor;
-    private final int activeStepTextColor;
-    private final int spacerBackgroundColor;
-    private final int activeStepFontSize;
-    private final int activeStepPaddingLeft;
-    private final int activeStepPaddingTop;
-    private final int activeStepPaddingRight;
-    private final int activeStepPaddingBottom;
-    private final int stepPaddingLeft;
-    private final int stepPaddingTop;
-    private final int stepPaddingRight;
-    private final int stepPaddingBottom;
-    private final int stepBackgroundColor;
-    private final int spacerHeight;
+    private int activeStepBackgroundColor;
+    private int activeStepTextColor;
+    private int spacerBackgroundColor;
+    private int activeStepFontSize;
+    private int activeStepPaddingLeft;
+    private int activeStepPaddingTop;
+    private int activeStepPaddingRight;
+    private int activeStepPaddingBottom;
+    private int stepPaddingLeft;
+    private int stepPaddingTop;
+    private int stepPaddingRight;
+    private int stepPaddingBottom;
+    private int stepBackgroundColor;
+    private int spacerHeight;
 
     public StepperView(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -84,24 +87,101 @@ public class StepperView extends LinearLayoutCompat {
         } finally {
             a.recycle();
         }
+
+        setViewConstants();
         setupView();
+
     }
 
     public void setOnStepClickListener(OnStepClick onStepClick) {
         this.onStepClick = onStepClick;
     }
 
+    public void setStepCount(int stepCount) {
+        this.stepCount = stepCount;
+        if (stepCount == 1) {
+            this.activeStep = 1;
+        }
+        resetView();
+    }
+
     public void setActiveStep(int i) {
+        clearCurrentActiveSteps();
+        TextView textView;
         if (i > 0 && i <= stepLists.size()) {
             currentActiveStep = i - 1;
-            TextView textView = stepLists.get(currentActiveStep);
+            textView = stepLists.get(currentActiveStep);
             textView.setText(String.valueOf(i));
-            textView.setBackground(setStepBackgroundColor(activeStepBackgroundColor));
-            textView.setTextColor(ContextCompat.getColor(getContext(), activeStepTextColor));
-            textView.setPadding(activeStepPaddingLeft, activeStepPaddingTop, activeStepPaddingRight, activeStepPaddingBottom);
         } else {
-            clearCurrentActiveSteps();
+            currentActiveStep = stepLists.size() - 1;
+            textView = stepLists.get(currentActiveStep);
+            textView.setText(String.valueOf(stepLists.size()));
         }
+        textView.setBackground(setStepBackgroundColor(activeStepBackgroundColor));
+        textView.setTextColor(ContextCompat.getColor(getContext(), activeStepTextColor));
+        textView.setPadding(activeStepPaddingLeft, activeStepPaddingTop, activeStepPaddingRight, activeStepPaddingBottom);
+    }
+
+    public void setActiveStepPadding(int padding) {
+        activeStepPaddingLeft = intToPx(padding);
+        activeStepPaddingTop = intToPx(padding);
+        activeStepPaddingRight = intToPx(padding);
+        activeStepPaddingBottom = intToPx(padding);
+        resetView();
+    }
+
+    public void setActiveStepPaddingLeft(int padding) {
+        activeStepPaddingLeft = intToPx(padding);
+        resetView();
+    }
+
+    public void setActiveStepPaddingTop(int padding) {
+        activeStepPaddingTop = intToPx(padding);
+        resetView();
+    }
+
+    public void setActiveStepPaddingRight(int padding) {
+        activeStepPaddingRight = intToPx(padding);
+        resetView();
+    }
+
+    public void setActiveStepPaddingBottom(int padding) {
+        activeStepPaddingBottom = intToPx(padding);
+        resetView();
+    }
+
+    public void setStepPadding(int padding) {
+        stepPaddingLeft = intToPx(padding);
+        stepPaddingTop = intToPx(padding);
+        stepPaddingRight = intToPx(padding);
+        stepPaddingBottom = intToPx(padding);
+        resetView();
+    }
+
+    public void setStepPaddingLeft(int padding) {
+        stepPaddingLeft = intToPx(padding);
+        resetView();
+    }
+
+    public void setStepPaddingTop(int padding) {
+        stepPaddingTop = intToPx(padding);
+        resetView();
+    }
+
+    public void setStepPaddingRight(int padding) {
+        stepPaddingRight = intToPx(padding);
+        resetView();
+    }
+
+    public void setStepPaddingBottom(int padding) {
+        stepPaddingBottom = intToPx(padding);
+        resetView();
+    }
+
+    public void setSpacerHeight(int padding) {
+        spacerHeight = intToPx(padding);
+        spacerLayoutParams.height = spacerHeight;
+        resetView();
     }
 
     public void clearCurrentActiveSteps() {
@@ -123,8 +203,17 @@ public class StepperView extends LinearLayoutCompat {
     }
 
     private void setupView() {
+        for (int i = 0; i < stepCount; i++) {
+            addTextView();
+            if (i < stepCount - 1) {
+                addSpacerView();
+            }
+        }
+        setActiveStep(activeStep);
+    }
+
+    private void setViewConstants() {
         setLayoutParams(linearLayoutParams);
-        setLayoutDirection(LAYOUT_DIRECTION_RTL);
         setOrientation(HORIZONTAL);
         setGravity(Gravity.CENTER);
         float paddingDp = 10f;
@@ -133,14 +222,6 @@ public class StepperView extends LinearLayoutCompat {
         linearLayoutParams.width = 0;
         spacerLayoutParams.height = spacerHeight;
         spacerLayoutParams.weight = 1;
-
-        for (int i = 0; i < stepCount; i++) {
-            addTextView();
-            if (i < stepCount - 1) {
-                addSpacerView();
-            }
-        }
-        setActiveStep(activeStep);
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
@@ -191,6 +272,17 @@ public class StepperView extends LinearLayoutCompat {
             drawable.setColorFilter(colorFilter);
         }
         return drawable;
+    }
+
+    private void resetView() {
+        removeAllViews();
+        stepLists.clear();
+        setupView();
+    }
+
+    private int intToPx(int value) {
+        Resources r = getResources();
+        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value ,r.getDisplayMetrics()));
     }
 
     public interface OnStepClick{
