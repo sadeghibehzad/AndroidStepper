@@ -106,14 +106,15 @@ public class StepperView extends LinearLayoutCompat {
     }
 
     public void setActiveStep(int i) {
-        clearCurrentActiveSteps();
         TextView textView;
         if (i > 0 && i <= stepLists.size()) {
             currentActiveStep = i - 1;
+            clearCurrentActiveSteps();
             textView = stepLists.get(currentActiveStep);
             textView.setText(String.valueOf(i));
         } else {
             currentActiveStep = stepLists.size() - 1;
+            clearCurrentActiveSteps();
             textView = stepLists.get(currentActiveStep);
             textView.setText(String.valueOf(stepLists.size()));
         }
